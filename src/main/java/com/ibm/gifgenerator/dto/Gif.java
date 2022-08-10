@@ -1,7 +1,6 @@
 package com.ibm.gifgenerator.dto;
 
 import javax.persistence.*;
-import java.sql.Blob;
 
 @Entity
 @Table(name = "Gifs")
@@ -9,26 +8,26 @@ public class Gif {
 
     @Id
     @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
+            name = "gif_sequence",
+            sequenceName = "gif_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
+            generator = "gif_sequence"
     )
 
     private int id;
     private String text;
-    private Blob gif;
+    private String gifUrl;
 
     public Gif() {
     }
 
-    public Gif(int id, String text, Blob gif) {
+    public Gif(int id, String text, String gifUrl) {
         this.id = id;
         this.text = text;
-        this.gif = gif;
+        this.gifUrl = gifUrl;
     }
 
     public int getId() {
@@ -47,11 +46,11 @@ public class Gif {
         this.text = text;
     }
 
-    public Blob getBlob() {
-        return gif;
+    public String getGifUrl() {
+        return gifUrl;
     }
 
-    public void setBlob(Blob gif) {
-        this.gif = gif;
+    public void setGifUrl(String gifUrl) {
+        this.gifUrl = gifUrl;
     }
 }

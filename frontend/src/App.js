@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Link
+} from "react-router-dom";
 
 import RouterURL from './routers/routerUrl';
 
@@ -13,14 +16,14 @@ return (
              height: '100vh',
            }}>
 
-    <Router>
-        <div>
-            <header className="gifs">
-                <h1 id="title">Gif Generator</h1>
-            </header>
-            <RouterURL />
-        </div>
-    </Router>
+	<Router>
+		<div>
+			<header className="gifs">
+				<h1 id="title">Gif Generator</h1>
+			</header>
+			<RouterURL />
+		</div>
+	</Router>
 </div>
 );
 }

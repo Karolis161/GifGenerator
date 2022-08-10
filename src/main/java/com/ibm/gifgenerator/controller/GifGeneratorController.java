@@ -1,10 +1,13 @@
 package com.ibm.gifgenerator.controller;
 
+import com.ibm.gifgenerator.dto.Gif;
 import com.ibm.gifgenerator.service.GifGeneratorService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("api/admin")
+@RequestMapping("api/admin/gif")
 public class GifGeneratorController {
 
     private final GifGeneratorService gifGeneratorService;
@@ -13,13 +16,13 @@ public class GifGeneratorController {
         this.gifGeneratorService = gifGeneratorService;
     }
 
-    @GetMapping("getGif")
-    public String getGif() {
-        return "Gif";
+    @GetMapping("data")
+    public List<Gif> getGif() {
+        return gifGeneratorService.getGifs();
     }
 
-    @GetMapping("getUrl")
-    public byte[] getUrl() throws Exception {
-        return gifGeneratorService.getCurrentGif();
+    @PostMapping("generate")
+    public void generateGif(@RequestBody String inputText, Gif gif) throws Exception {
+        gifGeneratorService.generateGif(inputText, gif);
     }
 }
