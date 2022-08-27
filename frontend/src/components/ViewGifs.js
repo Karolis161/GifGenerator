@@ -4,12 +4,12 @@ import React, {
 } from 'react';
 import ReactDOM from "react-dom";
 
-const ViewGifs = () => {
+function ViewGifs() {
 
 		const [gifs, setGifs] = useState([]);
 		const [loading, setLoading] = useState(false);
 
-		useEffect(() => {
+useEffect(() => {
 			setLoading(true);
 			fetch('api/admin/gif/data')
 				.then(res => res.json())
@@ -20,24 +20,32 @@ const ViewGifs = () => {
 				})
 		}, []);
 
+const tableRows = gifs.map((info) => {
+
+return(
+<tr>
+<td>{info.text}</td>
+<td><img src={info.gifUrl} width={100} height={100} alt="new" /></td>
+</tr>
+);
+});
+
+const addRows = () => {
+};
+
 return (
-<div className="container">
+<div>
 	<header className="gifs">
 		<h1 id="title">View Gifs</h1>
 	</header>
-	<table>
-		<tbody>
+	<table className="table table-stripped">
+		<thead>
 			<tr>
 				<th>Keyword</th>
 				<th>Gif</th>
 			</tr>
-			{gifs.map(gif => (
-			<tr key={gif.id}>
-				<td>{gif.text}</td>
-				<td><img src={gif.gifUrl} width={150} height={150} alt="new" /></td>
-			</tr>
-			))}
-		</tbody>
+		</thead>
+		<tbody>{tableRows}</tbody>
 	</table>
 </div>
 );
