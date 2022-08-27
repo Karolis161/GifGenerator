@@ -22,7 +22,7 @@ dependencies {
 	implementation 'com.ibm.watson:ibm-watson:10.0.1'
 	implementation 'com.google.code.gson:gson:2.8.9'
 	implementation 'at.mukprojects:giphy4j:1.0.1'
-	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
