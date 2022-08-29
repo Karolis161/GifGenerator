@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 
 function ViewGifs() {
 
-		const [gifs, setGifs] = useState([]);
+        const [gifs, setGifs] = useState([]);
 		const [loading, setLoading] = useState(false);
 
 useEffect(() => {
@@ -15,38 +15,33 @@ useEffect(() => {
 				.then(res => res.json())
 				.then(data => {
 					const lastFive = data.slice(-5);
-					setGifs(lastFive);
+					setGifs(lastFive)
 					setLoading(false);
 				})
 		}, []);
 
-const tableRows = gifs.map((info) => {
+const tableConfig = gifs.map((info) => {
 
 return(
-<tr>
-<td>{info.text}</td>
-<td><img src={info.gifUrl} width={100} height={100} alt="new" /></td>
-</tr>
+<div class="container" style={{'padding' : 10}}>
+    <div class="card" style={{'border' : '2px solid black'}}>
+        <div class="card-header">
+            <img src={info.gifUrl} width={100} height={100} alt="new" />
+        </div>
+        <div class="card-body">
+            <h4>{info.text}</h4>
+        </div>
+    </div>
+</div>
 );
 });
-
-const addRows = () => {
-};
 
 return (
 <div>
 	<header className="gifs">
 		<h1 id="title">View Gifs</h1>
 	</header>
-	<table className="table table-stripped">
-		<thead>
-			<tr>
-				<th>Keyword</th>
-				<th>Gif</th>
-			</tr>
-		</thead>
-		<tbody>{tableRows}</tbody>
-	</table>
+	<tbody>{tableConfig}</tbody>
 </div>
 );
 };

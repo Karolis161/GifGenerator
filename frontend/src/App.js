@@ -14,6 +14,8 @@ return (
              display: 'flex',
              justifyContent: 'center',
              height: '100vh',
+             textAlignVertical: "center",
+             textAlign: "center",
            }}>
 
 	<Router>

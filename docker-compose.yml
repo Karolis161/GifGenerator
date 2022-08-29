@@ -5,7 +5,7 @@ services:
     image: postgres
     restart: always
     ports:
-      - "5432:5432"
+      - "5555:5432"
     environment:
       - POSTGRES_PASSWORD=Namas1234
     volumes:
@@ -23,8 +23,8 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./gifgenerator:/opt/gifgenerator
-    working_dir: /opt/gifgenerator
+      - ./gifgenerator:/opt/
+    working_dir: /opt/
     networks:
       - spring-cloud-network
   giffrontend:
