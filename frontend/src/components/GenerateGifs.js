@@ -25,20 +25,26 @@ const GenerateGifs = () => {
 				.catch(function(error) {
 					return error;
 				});
-			setTimeout(function() {
-				window.location.reload(1);
-			}, 1000);
 		};
 
+		const getGifs = async () => {
+		setLoading(true);
+        			fetch('api/admin/gif/data')
+        				.then(res => res.json())
+        				.then(data => {
+        					const currentGif = data.slice(-1);
+        					setGifs(currentGif);
+        					setLoading(false);
+        				})
+		}
+
 		useEffect(() => {
-			setLoading(true);
-			fetch('api/admin/gif/data')
-				.then(res => res.json())
-				.then(data => {
-					const currentGif = data.slice(-1);
-					setGifs(currentGif);
-					setLoading(false);
-				})
+		getGifs()
+
+		const interval = setInterval(() => {
+		getGifs();
+		}, 1000)
+return()=>clearInterval(interval)
 		}, []);
 
 return (
