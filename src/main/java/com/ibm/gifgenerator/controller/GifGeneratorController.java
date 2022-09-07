@@ -2,6 +2,8 @@ package com.ibm.gifgenerator.controller;
 
 import com.ibm.gifgenerator.entities.Gif;
 import com.ibm.gifgenerator.service.GifGeneratorService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +24,7 @@ public class GifGeneratorController {
     }
 
     @PostMapping("generate")
-    public void generateGif(@RequestBody String inputText, Gif gif) throws Exception {
-        gifGeneratorService.generateGif(inputText, gif);
+    public ResponseEntity<Gif> generateGif(@RequestBody String inputText, Gif gif) throws Exception {
+        return new ResponseEntity<>(gifGeneratorService.generateGif(inputText, gif), HttpStatus.CREATED);
     }
 }

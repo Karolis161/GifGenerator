@@ -12,8 +12,8 @@ import ViewGifs from "../components/ViewGifs";
 import GenerateGifs from "../components/GenerateGifs";
 
 export default class RouterURL extends Component {
-  render() {
-  return (
+render() {
+return (
 <div>
 	<Link to="/" className="btn btn-primary">Home</Link> &nbsp;&nbsp;&nbsp;
 	<Link to="/viewGifs" className="btn btn-primary">View Gifs</Link> &nbsp;&nbsp;&nbsp;

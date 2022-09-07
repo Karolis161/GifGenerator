@@ -1,26 +1,26 @@
 import React, {
-	useEffect,
-	useState
+    useEffect,
+    useState
 } from 'react';
 import ReactDOM from "react-dom";
 
 function ViewGifs() {
 
-        const [gifs, setGifs] = useState([]);
-		const [loading, setLoading] = useState(false);
+    const [gifs, setGifs] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-useEffect(() => {
-			setLoading(true);
-			fetch('api/admin/gif/data')
-				.then(res => res.json())
-				.then(data => {
-					const lastFive = data.slice(-5);
-					setGifs(lastFive);
-					setLoading(false);
-				})
-		}, []);
+    useEffect(() => {
+        setLoading(true);
+        fetch('api/admin/gif/data')
+            .then(res => res.json())
+            .then(data => {
+                const lastFive = data.slice(-5);
+                setGifs(lastFive);
+                setLoading(false);
+            })
+    }, []);
 
-const tableConfig = gifs.map((info) => {
+    const tableConfig = gifs.map((info) => {
 
 return(
 <div class="container" style={{'padding' : 10}}>
@@ -38,10 +38,10 @@ return(
 
 return (
 <div>
-	<header className="gifs">
-		<h2 id="title" style={{'lineHeight' : 2}}>View Gifs</h2>
-	</header>
-	<tbody>{tableConfig}</tbody>
+    <header className="gifs">
+        <h2 id="title" style={{'lineHeight' : 2}}>View Gifs</h2>
+    </header>
+    <tbody>{tableConfig}</tbody>
 </div>
 );
 };

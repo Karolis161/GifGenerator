@@ -28,7 +28,7 @@ public class GifGeneratorService {
         return gifGeneratorRepository.findAll();
     }
 
-    public void generateGif(String inputText, Gif gif) throws Exception {
+    public Gif generateGif(String inputText, Gif gif) throws Exception {
 
         Gif gifs = new Gif();
         IamAuthenticator authenticator = new IamAuthenticator("iSz20ix-x-vQbFYetW3g8qv36dJhDgCFGWm2dBXg5FML");
@@ -63,6 +63,7 @@ public class GifGeneratorService {
 
         gifs.setText(relevantKeyword);
         gifs.setGifUrl(gifUrl.toString());
-        gifGeneratorRepository.save(gifs);
+
+        return gifGeneratorRepository.save(gifs);
     }
 }

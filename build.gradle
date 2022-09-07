@@ -22,8 +22,8 @@ dependencies {
 	implementation 'com.ibm.watson:ibm-watson:10.0.1'
 	implementation 'com.google.code.gson:gson:2.8.9'
 	implementation 'at.mukprojects:giphy4j:1.0.1'
+	implementation 'org.mockito:mockito-core:4.7.0'
 	runtimeOnly 'org.postgresql:postgresql'
-	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
