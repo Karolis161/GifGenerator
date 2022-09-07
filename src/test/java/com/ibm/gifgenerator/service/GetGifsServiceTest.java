@@ -26,9 +26,12 @@ class GetGifsServiceTest {
     @Test
     void getGifs() {
         List<Gif> gifList = new ArrayList<Gif>();
-        Gif gifOne = new Gif(1, "Spring", "https://media4.giphy.com/media/9Og3zy3mkrsPb5DPi0/giphy.gif?cid=6d8d0b919kcfi3ht9o38lazq7dm1cevonmgwwdfou5b6vuic&rid=giphy.gif&ct=g");
-        Gif gifTwo = new Gif(2, "single button", "https://media2.giphy.com/media/lHopDSa890Mc6MG1yd/giphy.gif?cid=6d8d0b912iakdihd70v2unjkmxeeuakap8fvqi78pvzaxvvy&rid=giphy.gif&ct=g");
-        Gif gifThree = new Gif(3, "International Business Machines Corporation", "https://media0.giphy.com/media/b5AQ4SXB83yEWTfh47/giphy.gif?cid=6d8d0b910kx3sgqef1ub0flsunumik0jx4uf6qzxm3bley6g&rid=giphy.gif&ct=g");
+        Gif gifOne = new Gif(1, "Spring",
+                "https://media4.giphy.com/media/9Og3zy3mkrsPb5DPi0/giphy.gif?cid=6d8d0b919kcfi3ht9o38lazq7dm1cevonmgwwdfou5b6vuic&rid=giphy.gif&ct=g");
+        Gif gifTwo = new Gif(2, "single button",
+                "https://media2.giphy.com/media/lHopDSa890Mc6MG1yd/giphy.gif?cid=6d8d0b912iakdihd70v2unjkmxeeuakap8fvqi78pvzaxvvy&rid=giphy.gif&ct=g");
+        Gif gifThree = new Gif(3, "International Business Machines Corporation",
+                "https://media0.giphy.com/media/b5AQ4SXB83yEWTfh47/giphy.gif?cid=6d8d0b910kx3sgqef1ub0flsunumik0jx4uf6qzxm3bley6g&rid=giphy.gif&ct=g");
 
         gifList.add(gifOne);
         gifList.add(gifTwo);

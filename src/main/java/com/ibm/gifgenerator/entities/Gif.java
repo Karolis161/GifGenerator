@@ -7,15 +7,8 @@ import javax.persistence.*;
 public class Gif {
 
     @Id
-    @SequenceGenerator(
-            name = "gif_sequence",
-            sequenceName = "gif_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "gif_sequence"
-    )
+    @SequenceGenerator(name = "gif_sequence", sequenceName = "gif_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gif_sequence")
 
     private int id;
     private String text;

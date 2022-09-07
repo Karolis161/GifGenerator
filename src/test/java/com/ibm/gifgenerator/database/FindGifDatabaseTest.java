@@ -20,7 +20,8 @@ class FindGifDatabaseTest {
 
     @Test
     void findGif() {
-        Gif gif = new Gif(1, "Spring", "https://media4.giphy.com/media/9Og3zy3mkrsPb5DPi0/giphy.gif?cid=6d8d0b919kcfi3ht9o38lazq7dm1cevonmgwwdfou5b6vuic&rid=giphy.gif&ct=g");
+        Gif gif = new Gif(1, "Spring",
+                "https://media4.giphy.com/media/9Og3zy3mkrsPb5DPi0/giphy.gif?cid=6d8d0b919kcfi3ht9o38lazq7dm1cevonmgwwdfou5b6vuic&rid=giphy.gif&ct=g");
         gifRepository.save(gif);
 
         Iterable<Gif> employees = gifRepository.findAll();

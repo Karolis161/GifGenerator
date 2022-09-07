@@ -41,7 +41,7 @@ class GetGifsControllerTest {
         given(gifService.getGifs()).willReturn(allGifs);
 
         mvc.perform(get("/api/admin/gif/data")
-                        .contentType(MediaType.APPLICATION_JSON))
+                .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].text", is(gif.getText())));

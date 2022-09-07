@@ -32,8 +32,10 @@ public class GifGeneratorService {
 
         Gif gifs = new Gif();
         IamAuthenticator authenticator = new IamAuthenticator("iSz20ix-x-vQbFYetW3g8qv36dJhDgCFGWm2dBXg5FML");
-        NaturalLanguageUnderstanding naturalLanguageUnderstanding = new NaturalLanguageUnderstanding("2022-04-07", authenticator);
-        naturalLanguageUnderstanding.setServiceUrl("https://api.eu-gb.natural-language-understanding.watson.cloud.ibm.com/instances/19fb483c-cd5a-4d63-a578-d4df28eabeaf");
+        NaturalLanguageUnderstanding naturalLanguageUnderstanding = new NaturalLanguageUnderstanding("2022-04-07",
+                authenticator);
+        naturalLanguageUnderstanding.setServiceUrl(
+                "https://api.eu-gb.natural-language-understanding.watson.cloud.ibm.com/instances/19fb483c-cd5a-4d63-a578-d4df28eabeaf");
 
         KeywordsOptions keywords = new KeywordsOptions.Builder()
                 .sentiment(true)

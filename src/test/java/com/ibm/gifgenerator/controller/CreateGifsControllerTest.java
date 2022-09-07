@@ -39,8 +39,8 @@ class CreateGifsControllerTest {
         given(gifService.generateGif(inputText, gif)).willReturn(gif);
 
         mvc.perform(post("/api/admin/gif/generate")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(json))
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(json))
                 .andExpect(status().isCreated());
     }
 }
