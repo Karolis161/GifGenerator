@@ -3,6 +3,7 @@ import React, {
 	useEffect
 } from "react";
 import axios from "axios";
+import Select from 'react-select'
 
 const GenerateGifs = () => {
 
@@ -47,18 +48,26 @@ const GenerateGifs = () => {
 return()=>clearInterval(interval)
 		}, []);
 
+		const options = [
+          { value: text, label: text }
+        ]
+
 return (
 <div className="container">
 	<header className="gifs">
-		<h1 id="title">Generate Gif</h1>
+		<h2 id="title" style={{'lineHeight' : 2}}>Generate Gif</h2>
 	</header>
+	<Select options = {options}/>
 	<form>
-		<input type="text" id="gif-name" onChange={handleChange} value={text} />
-		<button onClick={handleClick}>Generate gif</button>
+		<input type="text" id="gif-name" onChange={handleChange} value={text} /> &nbsp;&nbsp;&nbsp;
+		<button className="btn btn-primary" onClick={handleClick}>Generate gif</button>
 	</form>
+	<h4 id="title" style={{'lineHeight' : 2}}>Newest Gif</h4>
 	{gifs.map(gif => (
 	<tr key={gif.id}>
-		<td><img src={gif.gifUrl} width={300} height={300} alt="new" /></td>
+		<td style={{'border' : '2px solid black'}}>
+		    <img src={gif.gifUrl} width={300} height={300} alt="new" />
+		</td>
 	</tr>
 	))}
 </div>

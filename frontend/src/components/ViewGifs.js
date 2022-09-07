@@ -15,7 +15,7 @@ useEffect(() => {
 				.then(res => res.json())
 				.then(data => {
 					const lastFive = data.slice(-5);
-					setGifs(lastFive)
+					setGifs(lastFive);
 					setLoading(false);
 				})
 		}, []);
@@ -39,7 +39,7 @@ return(
 return (
 <div>
 	<header className="gifs">
-		<h1 id="title">View Gifs</h1>
+		<h2 id="title" style={{'lineHeight' : 2}}>View Gifs</h2>
 	</header>
 	<tbody>{tableConfig}</tbody>
 </div>
